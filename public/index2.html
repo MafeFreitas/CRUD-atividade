@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Put</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <form >
+
+        <!-- <h3>PUT</h3> -->
+<center>
+        <h1>Atualize ou busque algum confirmado, aqui! </h1>
+        <label>ID:</label>
+        <input type="text" id="id" readonly><br>
+        <br>
+        <label>Nome:</label>
+        <input type="text" id="nomeAtualizar">
+        <br><br>
+        <label>Idade:</label>
+        <input type="text" id="idadeAtualizar">
+        <br><br>
+        <label>CPF:</label>
+        <input type="text" id="cpfAtualizar" placeholder="Digite o CPF para busca">
+        <br><br>
+        <input type="button" onclick="buscarDados()" value="Buscar" class="botao">
+        <input type="button" onclick="atualizarDados()" value="Atualizar" class="botao">
+        <br>
+    </form>
+<br>
+<!-- 
+<button class="custom-button" onclick="redirect()">Post</button>
+
+<script>
+  function redirect() {
+    window.location.href = "index1.html";
+  }
+</script>
+
+
+<button class="custom-button" onclick="redirect1()">Get</button>
+
+<script>
+  function redirect1() {
+    window.location.href = "index.html";
+  }
+</script>
+
+<button class="custom-button" onclick="redirect2()">Delete</button>
+
+<script>
+  function redirect2() {
+    window.location.href = "index3.html";
+  }
+</script> -->
+
+    <a href="index1.html"  class="custom-button">Post</a>
+    <a href="index.html"  class="custom-button">Get</a>
+    <a href="index3.html"  class="custom-button">Delete</a> 
+
+</center>
+    <script>
+         //PUT
+         function atualizarDados() {
+            const id = document.getElementById('id').value;
+            const nome = document.getElementById('nomeAtualizar').value;
+            const idade = document.getElementById('idadeAtualizar').value;
+            const cpf = document.getElementById('cpfAtualizar').value;
+
+            fetch(`pessoas/${id}`,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({ nome: nome, idade: idade,cpf: cpf})
+            })
+            .then(response => response.json())
+            .then(data => {
+                // limpa os inputs do formulário
+                document.getElementById('id').value = '';
+                document.getElementById('nomeAtualizar').value = '';
+                document.getElementById('idadeAtualizar').value = '';
+                document.getElementById('cpfAtualizar').value = '';
+            });
+            
+        }
+        
+    </script>
+</body>
+</html>

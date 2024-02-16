@@ -1,0 +1,40 @@
+ body{
+background-image: url(https://www.papeldeparede.etc.br/fotos/wp-content/uploads/sao-paulo--simples_7521_1024x768-370x297.jpg);
+margin: 150px;
+
+} 
+.custom-button {
+    background-color: #ff2020; /* vermelho */
+    color: #FFFFFF; /* branco */
+    border: 2px solid #000000; /* preto */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    background-color: #1d1414; /* tom mais claro de vermelho ao passar o mouse */
+  }
+
+  h3{
+
+    font-size: x-large;
+
+  }
+
+  .meu-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(42, 194, 93), white,rgb(40, 3, 141)d);
+    transition: background-color 0.3s ease;
+  }
+  
+  .meu-link:hover {
+    background: linear-gradient(to right, white, rgb(0, 0, 0), white);
+  }
